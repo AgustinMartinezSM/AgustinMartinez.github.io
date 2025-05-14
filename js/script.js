@@ -79,11 +79,11 @@ document.addEventListener('DOMContentLoaded', () => { // Asegura que el HTML est
         // Opciones de Typed.js (puedes personalizar)
         const options = {
             strings: [
-                "Desarrollador Full Stack", // Primera frase
-                "Estudiante de Programación", // Segunda frase
-                "Docente en Tecnicatura en Programacion",
-                "Desarrollo personal", // Tercera frase (opcional)
-                // Añade más frases si quieres que roten
+                "Full Stack Developer",
+                    "Passionate Programming Student",
+                    "Tech Educator at UTN", // "Tech Educator" suena moderno
+                    "Building Digital Solutions",
+                    "Always Learning & Coding" // Un toque extra
             ],
             typeSpeed: 50,   // Velocidad de escritura (milisegundos por caracter)
             backSpeed: 30,   // Velocidad de borrado
