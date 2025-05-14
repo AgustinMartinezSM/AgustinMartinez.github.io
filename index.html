@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agustin Martinez - Developer </title>  <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
+</head>
+<body>
+
+<header>
+    <div class="container">
+    <h1>Agus</h1>
+        <button class="menu-toggle" aria-label="Mostrar menú">
+        &#9776; </button>
+        <nav>
+    <ul>
+        <li><a href="#hero">Inicio</a></li> <li><a href="#sobre-mi">Sobre Mí</a></li>
+        <li><a href="#habilidades">Habilidades</a></li>
+        <li><a href="#curriculum">Currículum</a></li> <li><a href="#portfolio">Portfolio</a></li> <li><a href="#contacto">Contacto</a></li>
+
+    </ul>
+</nav>
+        <button id="theme-toggle" aria-label="Cambiar tema">
+            <i class="fas fa-sun"></i></button>
+    </div>
+</header>
+
+<section id="hero">
+    <div class="hero-content">
+        <img src="images/miFoto.jpeg" alt="Tu Nombre" id="profile-pic"> <h1 id="hero-name">Agustin Martinez</h1> <p id="hero-subtitle">Desarrollador Full Stack | Docente en Programación  Estudiante de Programación</p> <div class="social-icons">
+        <a href="https://www.instagram.com/agus_sm2000/?utm_source=ig_web_button_share_sheet" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+        <a href="https://github.com/AgustinMartinezSM" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>
+        <a href="https://www.linkedin.com/in/AgustinSM2000" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+        <a href="https://web.facebook.com/profile.php?id=100091052193758" target="_blank" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+        <a href="mailto:agustinsm2000@gmail.com" aria-label="Enviar correo"><i class="fas fa-envelope"></i></a>
+    </div>
+    </div>
+</section>
+
+<main>
+    <section id="sobre-mi" class="scroll-animate">
+        <div class="container">
+        <h2>Sobre Mí</h2>
+        <p class="scroll-animate">
+            Hola, soy Agustin. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+            Phasellus imperdiet, nulla et dictum interdum, nisi lorem egestas odio,
+            vitae scelerisque enim ligula venenatis dolor. Maecenas nisl est, ultrices nec congue eget,
+            auctor vitae massa. Fusce luctus vestibulum augue ut aliquet. Mauris ante ligula,
+            fringilla quis commodo quis, euismod Vae ut nulla. Phasellus Rerum vitae.
+        </p>
+        </div>
+    </section>
+
+    <section id="habilidades" class="scroll-animate from-left">
+        <div class="container">
+        <h2>Habilidades</h2>
+        <p>Estas son algunas de las tecnologías con las que trabajo:</p>
+        <ul>
+            <li>Java</li>
+            <li>Spring Boot</li>
+            <li>Angular</li>
+            <li>HTML5</li>
+            <li>CSS3 (Flexbox, Grid)</li>
+            <li>JavaScript / TypeScript</li>
+            <li>Python</li>
+            <li>SQL (MySQL, PostgreSQL)</li>
+            <li>Git / GitHub</li>
+        </ul>
+        </div>
+    </section>
+
+    <section id="curriculum" class="scroll-animate"> <div class="container">
+        <h2>Currículum</h2>
+        <p>
+            Aquí puedes encontrar un resumen de mi experiencia y formación. Para más detalles,
+            puedes descargar mi CV completo en formato PDF.
+        </p>
+        <a href="documents/miCV.pdf" class="btn" download>
+            <i class="fas fa-download"></i> Descargar CV
+        </a>
+    </div>
+    </section>
+
+    <section id="portfolio" class="scroll-animate from-right">
+        <div class="container" >
+        <h2>Portfolio</h2>
+        <article class="proyecto">
+            <h3>Proyecto 1: Nombre del Proyecto (Ej: E-commerce Básico)</h3>
+            <p>
+                Descripción breve del proyecto. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                Ut elit tellus, luctus nec ullamcorper mattis, pulvinar dapibus leo.
+            </p>
+            <p><strong>Tecnologías:</strong> Angular, Spring Boot, MySQL</p>
+            <a href="#" target="_blank">Ver Código (GitHub)</a> <a href="#" target="_blank">Ver Demo</a> </article>
+
+        <article class="proyecto">
+            <h3>Proyecto 2: Nombre del Proyecto (Ej: Gestor de Turnos)</h3>
+            <p>
+                Otra descripción. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore
+                eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident.
+            </p>
+            <p><strong>Tecnologías:</strong> Angular, Spring Boot, PostgreSQL, JWT</p>
+            <a href="#" target="_blank">Ver Código (GitHub)</a> </article>
+        </div>
+    </section>
+
+    <section id="contacto" class="scroll-animate">
+        <div class="container">
+            <h2>Contacto</h2>
+            <p>
+                ¿Tienes alguna pregunta o propuesta? ¡No dudes en escribirme usando el formulario
+                o a través de mis redes sociales!
+            </p>
+
+            <form name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field">
+                <p class="hidden">
+                    <label>No llenar si eres humano: <input name="bot-field"></label>
+                </p>
+
+                <div class="form-group">
+                    <label for="name">Nombre:</label>
+                    <input type="text" id="name" name="name" required>
+                    <span class="error-message" id="name-error"></span> </div>
+
+                <div class="form-group">
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" required>
+                    <span class="error-message" id="email-error"></span> </div>
+
+                <div class="form-group">
+                    <label for="message">Mensaje:</label>
+                    <textarea id="message" name="message" rows="5" required></textarea>
+                    <span class="error-message" id="message-error"></span> </div>
+
+                <button type="submit" class="btn">
+                    <i class="fas fa-paper-plane"></i> Enviar Mensaje
+                </button>
+            </form>
+            <div class="social-icons contact-social-icons">
+                <a href="https://www.instagram.com/agus_sm2000/?utm_source=ig_web_button_share_sheet" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                <a href="https://github.com/AgustinMartinezSM" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                <a href="https://www.linkedin.com/in/AgustinSM2000" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                <a href="https://web.facebook.com/profile.php?id=100091052193758" target="_blank" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                <a href="mailto:agustinsm2000@gmail.com" aria-label="Enviar correo"><i class="fas fa-envelope"></i></a>
+            </div>
+
+        </div>
+    </section>
+</main>
+
+<footer>
+    <div class="container">
+    <p>&copy; 2025 Agustin Alejandro Martinez. Todos los derechos reservados.</p>
+    </div>
+</footer>
+
+    <a href="#" id="back-to-top-btn" title="Volver arriba">
+    <i class="fas fa-arrow-up"></i> </a>
+<script src="js/script.js"></script>
+</body>
+</html>
