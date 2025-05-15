@@ -612,7 +612,7 @@ footer {
 #contact-form input[type="text"],
 #contact-form input[type="email"],
 #contact-form textarea {
-    width: 100%; /* CLAVE: Asegurar que ocupe todo el ancho */
+    width: 100%; /* CLAVE: Asegurar que ocupe toodo el ancho */
     padding: 15px; /* Más padding interno para los campos */
     border: 1px solid var(--color-border);
     border-radius: 8px; /* Bordes más redondeados para los campos */
@@ -1187,9 +1187,18 @@ body.modal-active {
         align-items: center; /* Centrar la imagen si es más pequeña */
     }
     .about-me-image-wrapper {
-        max-width: 280px; /* Imagen un poco más pequeña en móvil si es necesario */
-        margin-bottom: 20px; /* Espacio si el texto se pone debajo */
-    }
+            max-width: 280px;
+            margin-bottom: 25px;
+            padding: 0; /* Sin padding interno en el wrapper */
+            background-color: var(--color-bg-secondary); /* Mantenemos un fondo si queremos */
+            border-radius: 10px; /* Radio para el wrapper */
+            box-shadow: 0 6px 15px rgba(0,0,0,0.2); /* Sombra normal */
+            border: 3px solid var(--color-accent); /* Borde de acento directo en el wrapper */
+            overflow: hidden; /* Importante si la imagen tiene otro radio */
+        }
+
+
+
      .about-me-text-column {
         max-width: 100%; /* Ocupar toodo el ancho disponible */
         text-align: center; /* Centrar el texto del resumen y el botón */
@@ -1201,6 +1210,15 @@ body.modal-active {
         margin: 0 auto 15px auto; /* Centrar el botón y ajustar margen inferior */
     }
 
+    #about-me-pic {
+            width: 100%;
+            height: 100%; /* Que la imagen intente llenar el wrapper */
+            object-fit: cover; /* Para que cubra sin deformarse */
+            border-radius: 0; /* Sin radio si el wrapper ya lo tiene y queremos que encaje */
+            /* O un radio pequeño si el wrapper tiene un radio más grande */
+            /* border-radius: 7px; */ /* (radio del wrapper - borde del wrapper) */
+            /* Ya no necesita borde propio la imagen */
+        }
 
     /* Ajuste para el grid de skills en móvil */
     .skills-grid {
