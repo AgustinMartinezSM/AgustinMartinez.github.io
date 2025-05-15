@@ -1,89 +1,87 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:ital@0;1&family=Unbounded&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Unbounded&display=swap');
+/* No necesitas importar Unbounded dos veces, una es suficiente */
+/* @import url('https://fonts.googleapis.com/css2?family=Unbounded&display=swap'); */
 
 /* Definición de la Paleta de Colores con Variables CSS */
 :root {
-    --color-bg-dark: #111827;       /* Fondo principal muy oscuro (azul/gris) */
-    --color-bg-secondary: #1f2937;  /* Fondo secundario/tarjetas (un poco más claro) */
-    --color-text-light: #e5e7eb;    /* Texto principal claro (casi blanco) */
-    --color-text-secondary: #9ca3af; /* Texto secundario (gris claro) */
-    --color-accent: #22d3ee;         /* Acento principal (cian brillante) */
-    --color-accent-hover: #06b6d4;   /* Acento para hover */
-    --color-border: #374151;       /* Color para bordes sutiles */
+    --color-bg-dark: #111827;
+    --color-bg-secondary: #1f2937;
+    --color-text-light: #e5e7eb;
+    --color-text-secondary: #9ca3af;
+    --color-accent: #22d3ee;
+    --color-accent-hover: #06b6d4;
+    --color-border: #374151;
+    /* NUEVA VARIABLE para el overlay de proyectos */
+    --color-accent-rgb: 34, 211, 238; /* RGB de tu cian #22d3ee */
 
-    /* Puedes añadir más colores si necesitas */
     --fuente-titulos: 'Unbounded', sans-serif;
     --fuente-cuerpo: 'Roboto', sans-serif;
 }
 
 /* Variables para el Modo Claro */
 body.light-mode {
-    --color-bg-dark: #f4f7f9;       /* Fondo principal claro (casi blanco) */
-    --color-bg-secondary: #ffffff;  /* Fondo secundario/tarjetas (blanco puro) */
-    --color-text-light: #2c3e50;    /* Texto principal oscuro */
-    --color-text-secondary: #525252; /* Texto secundario (gris oscuro) */
-    --color-accent: #007bff;         /* Acento principal (azul estándar) */
-    --color-accent-hover: #0056b3;   /* Acento para hover */
-    --color-border: #e0e0e0;       /* Color para bordes sutiles en claro */
-
-    /* Las fuentes se mantienen, no es necesario redefinirlas aquí */
+    --color-bg-dark: #f4f7f9;
+    --color-bg-secondary: #ffffff;
+    --color-text-light: #2c3e50;
+    --color-text-secondary: #525252;
+    --color-accent: #007bff;
+    --color-accent-hover: #0056b3;
+    --color-border: #e0e0e0;
+    /* NUEVA VARIABLE para el overlay de proyectos en modo claro */
+    --color-accent-rgb: 0, 123, 255; /* RGB de tu azul #007bff */
 }
 
 /* Estilos Globales y Reseteo Básico */
-
 * {
-    box-sizing: border-box; /* Hace que el padding y el border no añadan al ancho/alto total del elemento */
+    box-sizing: border-box;
     margin: 0;
     padding: 0;
 }
 
 body {
-    font-family: var(--fuente-cuerpo); /* Usando variable de fuente */
+    font-family: var(--fuente-cuerpo);
     line-height: 1.6;
-    color: var(--color-text-light); /* Color de texto principal */
-    background-color: var(--color-bg-dark); /* Fondo principal oscuro */
-    padding-top: 70px; /* Ajusta si es necesario */
+    color: var(--color-text-light);
+    background-color: var(--color-bg-dark);
+    padding-top: 70px; /* Ajusta si es necesario por el header fijo */
 }
 
-h1, h2, h3 {
-    font-family: var(--fuente-titulos); /* Usando variable de fuente */
+h1, h2, h3, h4 { /* Añadido h4 para los títulos de overlay/modal */
+    font-family: var(--fuente-titulos);
     margin-bottom: 1rem;
-    color: var(--color-text-light); /* Títulos claros por defecto */
+    color: var(--color-text-light);
 }
-/* Podrías darle el color de acento a los h2 */
+
 h2 {
    color: var(--color-accent);
-   margin-bottom: 1.5rem; /* Más espacio para títulos de sección */
+   margin-bottom: 1.5rem;
+   text-align: center; /* Centrar los títulos de sección por defecto */
 }
 
 a {
     text-decoration: none;
-    color: var(--color-accent); /* Links con color de acento */
-    transition: color 0.3s ease; /* Añadir transición aquí si no estaba */
+    color: var(--color-accent);
+    transition: color 0.3s ease;
 }
 
 a:hover {
-    color: var(--color-accent-hover); /* Hover de links */
+    color: var(--color-accent-hover);
 }
 
 ul {
-    list-style: none; /* Quita las viñetas de las listas */
+    list-style: none;
 }
 
-/* Contenedor principal para centrar el contenido y darle un ancho máximo */
 .container {
-    width: 80%;
-    max-width: 1100px; /* Ancho máximo para pantallas grandes */
-    margin: auto; /* Centra el contenedor */
-
-    padding: 0 20px; /* Un poco de padding lateral */
+    width: 90%; /* Un poco más de ancho para aprovechar mejor */
+    max-width: 1200px; /* Ajustado un poco el máximo */
+    margin: auto;
+    padding: 0 20px;
 }
 
-/* Estilos del Header y Navegación */
-
+/* --- Estilos del Header y Navegación (Sin cambios importantes) --- */
 header {
-    /* background-color: #333; */ /* Comenta o borra el color anterior */
-    background: linear-gradient(90deg, var(--color-bg-secondary), var(--color-bg-dark)); /* Ejemplo Gradiente! */
+    background: linear-gradient(90deg, var(--color-bg-secondary), var(--color-bg-dark));
     color: var(--color-text-light);
     padding: 10px 0;
     position: fixed;
@@ -91,31 +89,30 @@ header {
     top: 0;
     left: 0;
     z-index: 100;
-    border-bottom: 1px solid var(--color-border); /* Borde sutil inferior */
-    box-shadow: 0 2px 5px rgba(0,0,0,0.2); /* Sombra opcional */
+    border-bottom: 1px solid var(--color-border);
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
 }
 
-
 header .container {
-    display: flex; /* Usa Flexbox para alinear el logo/título y la nav */
-    justify-content: space-between; /* Empuja el título a la izq y la nav a la der */
-    align-items: center; /* Centra verticalmente los elementos */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
 header h1 {
-    color: var(--color-accent); /* Aplica el color de acento */
-    margin-bottom: 0; /* Mantiene sin margen inferior */
-    font-family: var(--fuente-titulos); /* Asegura la fuente de títulos */
-    font-size: 1.8rem; /* Puedes ajustar el tamaño si quieres */
-    font-weight: 700; /* O el grosor que prefieras */
+    color: var(--color-accent);
+    margin-bottom: 0;
+    font-family: var(--fuente-titulos);
+    font-size: 1.8rem;
+    font-weight: 700;
 }
 
 header nav ul {
-    display: flex; /* Coloca los elementos del menú en horizontal */
+    display: flex;
 }
 
 header nav ul li {
-    margin-left: 20px; /* Espacio a la izquierda de cada item del menú */
+    margin-left: 20px;
 }
 
  header nav ul li a {
@@ -126,32 +123,30 @@ header nav ul li {
  }
 
 header nav ul li a:hover {
-     color: var(--color-accent); /* Usamos el acento principal para hover aquí */
+     color: var(--color-accent);
  }
 
-/* Estilos Botón Hamburguesa */
 .menu-toggle {
-    display: none; /* Oculto por defecto en pantallas grandes */
+    display: none;
     background: none;
     border: 1px solid var(--color-text-light);
-    color: var(--color-text-light); /* Asegurar color blanco/claro */
-    font-size: 24px; /* Tamaño del ícono hamburguesa */
+    color: var(--color-text-light);
+    font-size: 24px;
     padding: 5px 10px;
     cursor: pointer;
-    order: 1; /* Para controlarlo con flexbox si fuera necesario */
+    order: 1;
 }
 
-/* Estilo Botón Cambio de Tema */
 #theme-toggle {
     background: none;
-    border: 1px solid var(--color-text-secondary); /* Borde sutil */
-    color: var(--color-text-secondary); /* Usa color de texto secundario */
-    font-size: 1.2rem; /* Tamaño del icono */
+    border: 1px solid var(--color-text-secondary);
+    color: var(--color-text-secondary);
+    font-size: 1.2rem;
     padding: 8px 10px;
-    border-radius: 50%; /* Botón circular */
+    border-radius: 50%;
     cursor: pointer;
     transition: color 0.3s ease, border-color 0.3s ease, transform 0.2s ease;
-    margin-left: 20px; /* Espacio si está al lado de la nav */
+    margin-left: 20px;
 }
 
 #theme-toggle:hover {
@@ -161,13 +156,6 @@ header nav ul li a:hover {
 
 #theme-toggle:active {
     transform: scale(0.9);
-}
-
-/* Ajuste para el header .container si es necesario para alinear el botón */
-header .container {
-    /* display: flex; ya lo tenías */
-    /* justify-content: space-between; ya lo tenías */
-    align-items: center; /* Asegura alineación vertical si la nav y el botón están en línea */
 }
 
 /* --- Estilos Hero Section --- */
@@ -239,74 +227,94 @@ header .container {
     transform: scale(1.2); /* Aumenta tamaño ligeramente */
 }
 
+
 /* Estilos de las Secciones Principales */
 
 /* Secciones con fondos alternados oscuros */
 main section {
-    padding: 60px 0;
-    border-bottom: 1px solid var(--color-border); /* Línea sutil entre secciones */
+    padding: 80px 0; /* Aumentado el padding vertical */
+    border-bottom: 1px solid var(--color-border);
 }
 main section:nth-of-type(odd) {
-    background-color: var(--color-bg-dark); /* Fondo principal */
+    background: linear-gradient(145deg, var(--color-bg-dark) 0%, var(--color-bg-secondary) 100%); /* Cambiado el ángulo del gradiente */
 }
 main section:nth-of-type(even) {
-    background-color: var(--color-bg-secondary); /* Fondo secundario */
+    background-color: var(--color-bg-secondary);
 }
- /* Quitar borde inferior de la última sección */
- main section:last-of-type {
+main section:last-of-type {
     border-bottom: none;
- }
+}
 
 /* Estilos específicos para la sección de Proyectos */
-#proyectos .proyecto { /* Selecciona los article con clase 'proyecto' DENTRO de #proyectos */
-    background-color: var(--color-bg-secondary); /* Fondo secundario (si la sección es dark) o var(--color-bg-dark) si la sección es secondary */
-        border: 1px solid var(--color-border);
-    border: 1px solid #ddd; /* Un borde sutil */
-    border-radius: 5px; /* Esquinas redondeadas */
-    padding: 25px; /* Espaciado interno de la tarjeta */
-    margin-bottom: 30px; /* Espacio debajo de cada tarjeta de proyecto */
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1); /* Una sombra suave para efecto de tarjeta */
+/* --- Estilos Sección Proyectos (Ajustes menores a tarjetas) --- */
+/* La clase .proyecto ya está definida, podemos añadirle toques */
+.proyecto {
+    background-color: var(--color-bg-secondary);
+    border: 1px solid var(--color-border);
+    border-radius: 10px; /* Un poco más de radio */
+    padding: 30px; /* Un poco más de padding */
+    margin-bottom: 30px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.15); /* Sombra un poco más pronunciada */
+    /* El position: relative y overflow: hidden ya están para el overlay */
+    transition: transform 0.3s ease-out, box-shadow 0.3s ease-out; /* Asegurar transición base */
 }
+/* El :hover ya está definido y se ve bien con el overlay */
 
 /* Ajusta el fondo de la tarjeta si la sección ya usa ese color */
- main section:nth-of-type(odd) #proyectos .proyecto { /* Sección dark -> tarjeta secondary */
+/* Esta lógica ya la tenías, asegúrate que siga funcionando si cambias fondos de sección */
+ main section:nth-of-type(odd) .proyecto { /* Sección dark -> tarjeta secondary */
      background-color: var(--color-bg-secondary);
+     border-color: var(--color-border);
  }
- main section:nth-of-type(even) #proyectos .proyecto { /* Sección secondary -> tarjeta dark */
+ main section:nth-of-type(even) .proyecto { /* Sección secondary -> tarjeta dark */
      background-color: var(--color-bg-dark);
-     border-color: var(--color-border); /* Ajustar borde si es necesario */
+     border-color: var(--color-border);
  }
 
-#proyectos .proyecto h3 {
+
+.proyecto h3 {
     margin-top: 0;
-    color: var(--color-text-light); /* Texto claro */
+    color: var(--color-text-light);
+    font-size: 1.4rem; /* Ligeramente más grande */
 }
-#proyectos .proyecto p {
-    margin-bottom: 10px;
-    color: var(--color-text-secondary); /* Texto secundario grisáceo */
+.proyecto p {
+    margin-bottom: 12px; /* Un poco más de espacio */
+    color: var(--color-text-secondary);
 }
-#proyectos .proyecto strong {
-    color: var(--color-text-light); /* Resaltar "Tecnologías:" */
+.proyecto strong {
+    color: var(--color-text-light);
 }
 
-#proyectos .proyecto a {
-    display: inline-block; /* Permite aplicar márgenes y padding */
+.project-links { /* Añadí esta clase en el HTML para agrupar los enlaces */
+    margin-top: 15px;
+}
+
+.project-links a { /* Estilos para los botones View Code / View Demo dentro de la tarjeta */
+    display: inline-block;
     background-color: var(--color-accent);
-    color: var(--color-bg-dark);
-    padding: 8px 15px; /* Padding interno del botón */
-    border-radius: 3px; /* Esquinas redondeadas */
-    margin-right: 10px; /* Espacio entre botones */
-    margin-top: 10px; /* Espacio arriba de los botones */
-    transition: background-color 0.3s ease; /* Transición suave */
+    color: var(--color-bg-dark); /* Texto oscuro sobre fondo de acento */
+    padding: 8px 15px;
+    border-radius: 4px;
+    margin-right: 10px;
+    margin-bottom: 5px; /* Para si se apilan */
+    transition: background-color 0.3s ease, color 0.3s ease;
+    font-size: 0.85rem;
+    font-weight: bold;
 }
 
-#proyectos .proyecto a:hover {
+.project-links a:hover {
     background-color: var(--color-accent-hover);
     color: var(--color-bg-dark);
 }
-/* Efecto al hacer clic en botón */
-#proyectos .proyecto a:active {
-    transform: scale(0.95); /* El botón se achica un poco */
+.project-links a:active {
+    transform: scale(0.95);
+}
+
+/* Estilos Hover Avanzado Tarjetas de Proyecto (Overlay - Ya lo tenías, solo asegúrate que las variables --color-accent-rgb estén definidas) */
+.project-overlay {
+    /* ... tus estilos existentes ... */
+    background-color: rgba(var(--color-accent-rgb), 0.90); /* Asegúrate que --color-accent-rgb esté definido */
+    border-radius: 10px; /* Coincidir con el radio de la tarjeta */
 }
 
 /* Estilos para la sección de Contacto (ejemplo simple para los links) */
@@ -322,43 +330,63 @@ main section:nth-of-type(even) {
      /* color: var(--color-accent-hover); Ya hereda de la regla 'a:hover' global */
  }
 
-/* --- Estilos Sección Habilidades --- */
-
-#habilidades .container {
-    /* Podríamos centrar toodo el contenido de la sección si queremos */
-    /* text-align: center; */
+#habilidades {
+    /* Puedes darle un fondo diferente si quieres que destaque más */
+    /* background-color: var(--color-bg-dark); */ /* Si la sección anterior es secondary */
 }
 
-#habilidades p { /* El párrafo introductorio */
-    margin-bottom: 25px; /* Más espacio antes de las etiquetas */
+#habilidades h2 {
+    margin-bottom: 20px; /* Menos margen para que el intro esté más cerca */
 }
 
-#habilidades ul {
-    display: flex; /* Activa Flexbox */
-    flex-wrap: wrap; /* Permite que los elementos pasen a la línea siguiente si no caben */
-    gap: 10px; /* Espacio uniforme entre las etiquetas (horizontal y vertical) */
-    justify-content: center; /* Centra las etiquetas horizontalmente en el contenedor */
-    padding-left: 0; /* Asegura que no haya padding de lista por defecto */
+.skills-intro {
+    text-align: center;
+    max-width: 700px;
+    margin: 0 auto 40px auto; /* Centrado y con margen inferior */
+    color: var(--color-text-secondary);
+    font-size: 1.1rem;
 }
 
-#habilidades ul li {
-    background-color: var(--color-bg-secondary); /* Fondo oscuro secundario */
-        color: var(--color-text-light); /* Texto claro */
-    padding: 8px 18px; /* Espaciado interno (vertical, horizontal) */
-    border-radius: 20px; /* Esquinas muy redondeadas para efecto "pill" */
-    font-size: 0.9rem; /* Tamaño de fuente ligeramente más pequeño */
-    /* border: 1px solid #ccc; */ /* Borde sutil opcional */
-    box-shadow: 0 1px 3px rgba(0,0,0,0.1); /* Sombra muy sutil opcional */
-    transition: transform 0.2s ease; /* Animación suave para hover (opcional) */
+.skills-grid {
+    display: grid;
+    /* Crea columnas responsivas: intentará hacer columnas de 250px,
+       pero se ajustarán para llenar el espacio. Mínimo 1 columna, máximo 4. */
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px; /* Espacio entre tarjetas */
 }
 
-/* Opcional: Efecto al pasar el ratón */
-#habilidades ul li:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 3px 6px rgba(0,0,0,0.3);
-    background-color: var(--color-accent); /* Fondo de acento al pasar el ratón */
-    color: var(--color-bg-dark); /* Texto oscuro */
-    border-color: var(--color-accent-hover);
+.skill-card {
+    background-color: var(--color-bg-secondary); /* O var(--color-bg-dark) si el fondo de sección es secondary */
+    padding: 25px;
+    border-radius: 10px;
+    text-align: center;
+    border: 1px solid var(--color-border);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.skill-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 10px 20px rgba(var(--color-accent-rgb), 0.2); /* Sombra con color de acento */
+}
+
+.skill-icon {
+    font-size: 3rem; /* Tamaño grande para el ícono */
+    color: var(--color-accent);
+    margin-bottom: 15px;
+    line-height: 1; /* Para asegurar que no añada espacio extra */
+}
+
+.skill-card h3 {
+    font-size: 1.3rem;
+    margin-bottom: 10px;
+    color: var(--color-text-light); /* Asegurar color de texto */
+}
+
+.skill-card p {
+    font-size: 0.9rem;
+    color: var(--color-text-secondary);
+    line-height: 1.5;
 }
 
 /* --- Animaciones al Hacer Scroll --- */
@@ -435,77 +463,202 @@ footer {
     margin-right: 8px; /* Espacio entre icono y texto */
 }
 
-/* --- Estilos Formulario de Contacto --- */
+/* --- Estilos Mejorados Sección Contacto --- */
+#contacto h2 {
+    margin-bottom: 20px; /* Menos margen si el intro es corto */
+}
 
-#contacto form {
-    max-width: 700px; /* Limita el ancho del formulario */
-    margin: 30px auto; /* Centra el formulario y añade espacio arriba/abajo */
-    padding: 30px;
-    background-color: var(--color-bg-secondary); /* Fondo oscuro secundario */
-    border-radius: 8px;
+.contact-intro {
+    text-align: center;
+    max-width: 650px;
+    margin: 0 auto 40px auto;
+    color: var(--color-text-secondary);
+    font-size: 1.1rem;
+}
+
+.contact-options {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* Tarjetas responsivas */
+    gap: 30px;
+    margin-bottom: 40px;
+}
+
+.contact-option-card {
+    background-color: var(--color-bg-secondary);
+    padding: 25px 30px;
+    border-radius: 10px;
+    text-align: center;
     border: 1px solid var(--color-border);
-    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+    color: var(--color-text-light); /* Asegurar que el texto dentro de la tarjeta sea legible */
+}
+
+.contact-option-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 15px rgba(var(--color-accent-rgb), 0.15);
+    border-color: var(--color-accent);
+    color: var(--color-accent); /* Cambiar color del texto/ícono al hacer hover */
+}
+
+.contact-option-card i {
+    font-size: 2.5rem; /* Icono grande */
+    margin-bottom: 15px;
+    display: block; /* Para que el margen inferior funcione bien */
+    color: var(--color-accent); /* Icono con color de acento */
+    transition: color 0.3s ease;
+}
+.contact-option-card:hover i {
+    color: inherit; /* Hereda el color del texto del enlace (que cambia a acento en hover) */
+}
+
+
+.contact-option-card h3 {
+    font-size: 1.3rem;
+    margin-bottom: 8px;
+    color: var(--color-text-light); /* Título de la tarjeta */
+    transition: color 0.3s ease;
+}
+.contact-option-card:hover h3 {
+     color: inherit;
+}
+
+
+.contact-option-card p {
+    font-size: 0.95rem;
+    color: var(--color-text-secondary);
+    margin-bottom: 15px;
+    word-break: break-all; /* Para que emails largos no rompan el layout */
+    transition: color 0.3s ease;
+}
+ .contact-option-card:hover p {
+     color: var(--color-text-light); /* Hacer el texto secundario más claro en hover */
+}
+
+.contact-option-card span { /* Texto "Send a direct message", etc. */
+    font-size: 0.85rem;
+    color: var(--color-accent);
+    font-weight: bold;
+    display: block;
+    transition: color 0.3s ease;
+}
+.contact-option-card:hover span {
+    color: inherit;
+}
+
+
+/* Estilos para el formulario oculto */
+/* --- Estilos Mejorados Formulario de Contacto --- */
+
+#contacto h2 { /* Título "Get in Touch" */
+    margin-bottom: 15px; /* Un poco menos de margen si el párrafo introductorio va después */
+}
+
+.contact-intro { /* Párrafo introductorio de la sección de contacto */
+    /* ... tus estilos existentes ... */
+    margin-bottom: 30px; /* Espacio antes de las tarjetas o el botón del formulario */
+}
+
+.form-toggle-area { /* Div que contiene el párrafo y el botón "Show/Hide Contact Form" */
+    text-align: center;
+    margin-top: 40px; /* Espacio después de las tarjetas de contacto */
+    margin-bottom: 20px; /* Espacio antes de que aparezca el formulario */
+}
+
+.form-toggle-area p {
+    color: var(--color-text-secondary);
+    margin-bottom: 15px; /* Espacio entre el texto y el botón */
+    font-size: 0.95rem;
+}
+
+#contact-form { /* El <form> en sí */
+    max-width: 650px; /* Un poco menos de ancho máximo si prefieres */
+    margin: 0 auto;   /* Centrar el formulario (ya no 30px arriba/abajo porque lo controla .hidden-form.visible) */
+    padding: 35px 40px; /* Aumentar un poco el padding */
+    background-color: var(--color-bg-secondary);
+    border-radius: 12px; /* Bordes más redondeados */
+    border: 1px solid var(--color-border);
+    box-shadow: 0 6px 18px rgba(0,0,0,0.25); /* Sombra un poco más pronunciada */
+    /* Estilos para la transición de aparición (los que ya tenías para .hidden-form) */
+    display: none;
+    max-height: 0;
+    opacity: 0;
+    overflow: hidden;
+    transition: max-height 0.7s ease-in-out, opacity 0.5s ease-in-out 0.2s, margin-top 0.7s ease-in-out, padding 0.5s ease-in-out; /* Añadida transición para padding */
+    margin-top: 0;
+}
+
+#contact-form.visible { /* Cuando el formulario es visible */
+    display: block;
+    max-height: 1000px; /* Suficiente para el contenido */
+    opacity: 1;
+    margin-top: 30px; /* Espacio cuando es visible */
+    /* padding: 35px 40px; (El padding ya está en la regla base, no necesita cambiar aquí) */
 }
 
 .form-group {
-    margin-bottom: 20px; /* Espacio entre grupos de campos */
+    margin-bottom: 25px; /* Un poco más de espacio entre grupos */
 }
 
-/* Estilos para Mensajes de Error del Formulario */
-.error-message {
-    display: block; /* Para que ocupe su propia línea */
-    color: #ff6b6b; /* Un color rojo para errores (ajusta si es necesario) */
-    font-size: 0.85em;
-    margin-top: 5px;
-    min-height: 1em; /* Para evitar saltos de layout cuando está vacío */
-}
-
-/* Opcional: Estilo para campos con error */
-#contacto input.input-error,
-#contacto textarea.input-error {
-    border-color: #ff6b6b; /* Borde rojo para el campo con error */
-    box-shadow: 0 0 5px rgba(255, 107, 107, 0.5); /* Sombra roja sutil */
-}
-
-#contacto label {
-    display: block; /* Hace que la etiqueta ocupe su propia línea */
-    margin-bottom: 8px; /* Espacio entre etiqueta y campo */
+#contact-form label { /* Cambiamos selector a #contact-form label para más especificidad */
+    display: block;
+    margin-bottom: 10px; /* Un poco más de espacio entre label y campo */
     color: var(--color-text-secondary);
     font-weight: bold;
+    font-size: 0.9rem; /* Ligeramente más pequeño */
+    text-align: left; /* Asegurar alineación a la izquierda */
 }
 
-#contacto input[type="text"],
-#contacto input[type="email"],
-#contacto textarea {
-    width: 100%; /* Ocupa toodo el ancho disponible */
-    padding: 12px;
+#contact-form input[type="text"],
+#contact-form input[type="email"],
+#contact-form textarea {
+    width: 100%; /* CLAVE: Asegurar que ocupe todo el ancho */
+    padding: 15px; /* Más padding interno para los campos */
     border: 1px solid var(--color-border);
-    border-radius: 5px;
-    background-color: var(--color-bg-dark); /* Fondo de campo oscuro */
-    color: var(--color-text-light); /* Texto de entrada claro */
+    border-radius: 8px; /* Bordes más redondeados para los campos */
+    background-color: var(--color-bg-dark);
+    color: var(--color-text-light);
     font-family: var(--fuente-cuerpo);
     font-size: 1rem;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease; /* Transición para el focus */
 }
 
-#contacto input[type="text"]:focus,
-#contacto input[type="email"]:focus,
-#contacto textarea:focus {
-    outline: none; /* Quita el borde por defecto del navegador */
-    border-color: var(--color-accent); /* Resalta el borde con color de acento al enfocar */
-    box-shadow: 0 0 5px rgba(var(--color-accent-rgb, 34, 211, 238), 0.5); /* Añade un brillo sutil (necesitas definir --color-accent-rgb si usas esto) */
+#contact-form input[type="text"]:focus,
+#contact-form input[type="email"]:focus,
+#contact-form textarea:focus {
+    outline: none;
+    border-color: var(--color-accent);
+    box-shadow: 0 0 0 3px rgba(var(--color-accent-rgb), 0.3); /* Sombra exterior al hacer focus, más sutil */
 }
 
-
-#contacto textarea {
-    resize: vertical; /* Permite redimensionar solo verticalmente */
-    min-height: 120px;
+#contact-form textarea {
+    resize: vertical;
+    min-height: 150px; /* Un poco más alto el textarea */
 }
 
-#contacto button[type="submit"] {
-    /* Ya debería heredar estilos de .btn */
-    width: 100%; /* Hacer que el botón ocupe toodo el ancho */
-    padding: 12px 20px; /* Ajustar padding si es necesario */
-    font-size: 1.1rem;
+#contact-form button[type="submit"] { /* Botón "Send Message" */
+    width: 100%;
+    padding: 15px 20px; /* Más padding vertical */
+    font-size: 1rem; /* Un poco más pequeño si el botón de arriba es más grande */
+    /* Hereda otros estilos de .btn (background, color, border-radius, etc.) */
+    /* Puedes añadir un box-shadow si quieres que destaque más */
+    /* box-shadow: 0 4px 10px rgba(var(--color-accent-rgb), 0.2); */
+}
+
+/* Estilos para Mensajes de Error (pueden quedarse como estaban o ajustarlos) */
+.error-message {
+    display: block;
+    color: #ff6b6b;
+    font-size: 0.85em;
+    margin-top: 8px; /* Un poco más de espacio */
+    min-height: 1em;
+    text-align: left; /* Asegurar alineación */
+}
+
+#contact-form input.input-error, /* Mayor especificidad */
+#contact-form textarea.input-error {
+    border-color: #ff6b6b !important; /* !important para asegurar que se aplique sobre el focus */
+    box-shadow: 0 0 0 3px rgba(255, 107, 107, 0.3) !important;
 }
 
 /* Estilo para ocultar el campo honeypot */
@@ -524,6 +677,27 @@ footer {
     margin-top: 40px; /* Espacio después del formulario */
     padding-bottom: 20px;
     /* El resto de estilos los hereda de .social-icons */
+}
+
+/* --- Estilos para Notificación de Email Copiado --- */
+.contact-option-card .copy-notification {
+    /* El HTML ya tiene: display: none; margin-top: 10px; font-weight: bold; */
+    /* Añadimos color y transición para la opacidad */
+    color: var(--color-accent); /* Usa tu color de acento para el mensaje */
+    font-size: 0.9em;          /* Un poco más pequeño que el texto del párrafo */
+    opacity: 0;                /* Inicialmente invisible (además de display:none) */
+    transition: opacity 0.3s ease-in-out; /* Transición suave para la aparición/desaparición */
+    /* Si quieres que ocupe su propia línea y esté centrado: */
+    /* display: block; */ /* Esto lo manejará JS, pero si lo pones aquí, asegúrate que JS lo cambie */
+    /* text-align: center; */ /* Si quieres centrar el texto de la notificación */
+    width: 100%; /* Para que ocupe el ancho de la tarjeta si es display:block */
+}
+
+/* Clase que podríamos añadir con JS para mostrar y luego quitar */
+.contact-option-card .copy-notification.show {
+    opacity: 1;
+    /* Si usas display:block arriba, no necesitas cambiar display aquí,
+       el JS se encargará de display:none -> display:inline/block -> display:none */
 }
 
 /* --- Estilos Botón Volver Arriba --- */
@@ -643,6 +817,263 @@ footer {
     color: var(--color-accent-hover);
 }
 
+.btn-disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+    pointer-events: none; /* Evita que se pueda hacer clic */
+}
+
+/* --- Estilos Mejorados Sección About Me --- */
+/* --- REDISEÑO ESTÉTICO SECCIÓN ABOUT ME --- */
+
+#about-me {
+    /* Considera un fondo especial para esta sección si quieres que destaque */
+    /* background: linear-gradient(160deg, var(--color-bg-secondary) 0%, var(--color-bg-dark) 70%); */
+    /* O un color sólido diferente, o mantener el que tiene por ser odd/even */
+    padding: 100px 0; /* Un poco más de padding vertical para darle aire */
+}
+
+#about-me h2 {
+    /* Ya está centrado y con color de acento, lo cual es bueno */
+    /* Puedes añadir un separador gráfico debajo si quieres: */
+    /* position: relative; */
+    /* padding-bottom: 15px; */
+}
+     #about-me h2::after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 3px;
+    background-color: var(--color-accent);
+    border-radius: 2px;
+}
+
+.about-me-content {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 40px; /* Aumentado el gap */
+    align-items: center; /* Cambiado a center para alinear verticalmente imagen y tarjeta de texto si tienen alturas diferentes */
+}
+
+.about-me-image-wrapper {
+    flex: 1 1 300px; /* Base un poco más grande */
+    max-width: 350px; /* Máximo un poco más grande */
+    /* margin: 0 auto; (ya no es tan necesario con flex y gap) */
+    /* Vamos a darle un toque más "flotante" a la imagen */
+    padding: 10px; /* Un pequeño padding si queremos un efecto de doble borde o similar */
+    background-color: var(--color-bg-secondary); /* Un fondo sutil si la imagen no es perfectamente opaca o para el borde */
+    border-radius: 20px; /* Radio más pronunciado */
+    box-shadow: 0 10px 30px rgba(0,0,0,0.2), 0 0 0 5px var(--color-accent); /* Sombra y un "pseudo-borde" de acento */
+}
+
+#about-me-pic {
+    width: 100%;
+    height: auto;
+    border-radius: 15px; /* Radio interno, un poco menor que el wrapper */
+    /* Quitamos el borde directo de la imagen, lo maneja el wrapper */
+    /* border: 4px solid var(--color-accent); */
+    display: block;
+}
+
+.about-me-text-column {
+    flex: 2 1 480px; /* Que el texto tome más espacio */
+    background-color: var(--color-bg-secondary); /* Fondo de tarjeta */
+    padding: 30px 35px; /* Buen padding interno */
+    border-radius: 15px;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+    /* Si quieres un borde sutil: */
+    /* border: 1px solid var(--color-border); */
+    display: flex;
+    flex-direction: column;
+}
+
+.about-me-summary p {
+    margin-bottom: 25px; /* Más espacio antes del botón */
+    font-size: 1.15rem; /* Un poco más grande */
+    line-height: 1.7;
+    color: var(--color-text-light); /* Que el resumen tenga el color de texto principal */
+}
+
+#toggle-bio-btn {
+    /* El botón ya tiene la clase .btn, que le da estilos base */
+    /* Podemos hacerlo un poco más prominente o diferente aquí si queremos */
+    padding: 12px 25px;
+    font-size: 0.9rem;
+    /* margin: 0 auto 20px auto; /* Si quisieras centrar el botón dentro de la tarjeta de texto */
+    margin-bottom: 20px; /* Espacio antes de que se despliegue el texto */
+}
+
+.more-bio-details {
+    /* Los estilos de transición (max-height, opacity) se mantienen como estaban */
+    /* Solo nos aseguramos del color del texto */
+    color: var(--color-text-secondary); /* El texto detallado puede ser un poco más tenue */
+}
+
+.more-bio-details p {
+    margin-bottom: 15px;
+    line-height: 1.7;
+}
+
+/* Si quieres que el último párrafo del texto detallado no tenga tanto margen inferior */
+.more-bio-details p:last-child {
+    margin-bottom: 0;
+}
+
+#toggle-bio-btn {
+    /* Hereda estilos de .btn, pero puedes añadir específicos */
+    display: inline-flex; /* Para alinear el icono con el texto */
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+#toggle-bio-btn i {
+    margin-left: 8px;
+    transition: transform 0.3s ease; /* Para animar la flecha */
+}
+
+#toggle-bio-btn.expanded i {
+    transform: rotate(180deg); /* Gira la flecha cuando está expandido */
+}
+
+.more-bio-details {
+    /* display: none; se maneja inline y con JS, pero podemos controlar la transición aquí */
+    overflow: hidden; /* Importante para la animación de altura */
+    max-height: 0; /* Comienza colapsado */
+    transition: max-height 0.5s ease-in-out, opacity 0.5s ease-in-out, margin-top 0.5s ease-in-out;
+    opacity: 0;
+    /* margin-top: 0; (para que no haya salto al aparecer) */
+}
+
+.more-bio-details.visible {
+    max-height: 1000px; /* Un valor suficientemente grande para tu contenido */
+    opacity: 1;
+    margin-top: 0px; /* Espacio cuando es visible */
+}
+
+.more-bio-details p:first-child { /* El primer párrafo dentro del texto detallado */
+    margin-top: 0px; /* Quitar el margen superior del primer párrafo si lo tiene */
+}
+
+.more-bio-details p {
+    margin-bottom: 15px;
+    line-height: 1.7;
+}
+
+/* --- Estilos para la Modal de Proyectos --- */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7); /* Fondo oscuro semitransparente */
+    display: flex; /* Para centrar el modal-content */
+    align-items: center;
+    justify-content: center;
+    opacity: 0; /* Oculta por defecto */
+    visibility: hidden; /* Oculta y no interactuable por defecto */
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+    z-index: 1000; /* Asegura que esté por encima de toodo */
+}
+
+.modal-overlay.active { /* Clase que añadiremos con JS para mostrar la modal */
+    opacity: 1;
+    visibility: visible;
+}
+
+.modal-content {
+    background-color: var(--color-bg-secondary); /* Usa tu color de fondo secundario */
+    color: var(--color-text-light); /* Usa tu color de texto principal */
+    padding: 30px;
+    border-radius: 8px;
+    width: 90%;
+    max-width: 700px; /* Ancho máximo de la modal */
+    max-height: 85vh; /* Alto máximo, permite scroll interno si el contenido es largo */
+    overflow-y: auto; /* Scroll vertical si es necesario */
+    position: relative;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+    transform: scale(0.9); /* Efecto de aparición (opcional) */
+    transition: transform 0.3s ease;
+}
+
+.modal-overlay.active .modal-content {
+    transform: scale(1); /* Tamaño normal al mostrarse */
+}
+
+.modal-close-btn {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background: none;
+    border: none;
+    color: var(--color-text-secondary);
+    font-size: 2rem; /* Tamaño del '×' */
+    line-height: 1;
+    cursor: pointer;
+    padding: 0;
+    transition: color 0.2s ease;
+}
+
+.modal-close-btn:hover {
+    color: var(--color-accent);
+}
+
+#modal-title {
+    margin-top: 0;
+    margin-bottom: 20px;
+    color: var(--color-accent); /* Título de la modal con color de acento */
+}
+
+#modal-image-container {
+    margin-bottom: 20px;
+    text-align: center; /* Centra la imagen si la pones */
+}
+
+#modal-image-container img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 4px;
+    border: 1px solid var(--color-border);
+}
+
+#modal-description p {
+    margin-bottom: 15px;
+    line-height: 1.7;
+}
+
+#modal-tech-list {
+    list-style: none;
+    padding-left: 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 25px;
+}
+
+#modal-tech-list li {
+    background-color: var(--color-bg-dark); /* O un color que contraste con --color-bg-secondary */
+    padding: 5px 12px;
+    border-radius: 15px;
+    font-size: 0.85rem;
+    border: 1px solid var(--color-border);
+}
+
+.modal-links a.btn {
+    margin-right: 10px;
+    margin-bottom: 10px; /* Para responsive si se apilan */
+}
+.modal-links a.btn:last-child {
+    margin-right: 0;
+}
+
+/* Opcional: Evitar scroll del body cuando la modal está activa */
+body.modal-active {
+    overflow: hidden;
+}
+
 /* --- Media Queries para Responsive Design --- */
 
 @media (max-width: 768px) {
@@ -650,82 +1081,84 @@ footer {
 
     /* --- Ajustes generales para pantallas más pequeñas --- */
     body {
-        /* Asegúrate de que solo esté una de estas líneas, la que necesites */
-        /* padding-top: 100px; */
-        padding-top: 70px; /* Probablemente esta, ajusta si es necesario */
+        padding-top: 60px; /* Ajusta si la altura de tu header cambia en móvil */
     }
 
     .container {
-        width: 90%;
-        padding: 0 15px;
+        width: 90%; /* Usar un poco menos del ancho total para tener márgenes */
+        padding: 0 15px; /* Padding lateral reducido */
     }
 
     main section {
-        padding: 40px 0;
+        padding: 60px 0; /* Reducido el padding vertical de las secciones */
     }
 
-    h1 {
-        font-size: 2rem;
+    h1, #hero-name { /* Ajustar tamaño de H1 y el nombre en el hero */
+        font-size: 2.2rem;
     }
 
-    h2 {
+    h2 { /* Títulos de sección */
+        font-size: 1.8rem;
+    }
+
+    #hero-subtitle {
+        font-size: 1.1rem; /* Subtítulo del hero */
+    }
+
+    #profile-pic { /* Foto de perfil en el hero */
+        width: 150px;
+        height: 150px;
+    }
+
+    .social-icons a { /* Íconos sociales */
         font-size: 1.5rem;
+        gap: 15px;
     }
 
-    #proyectos .proyecto a {
-        padding: 6px 12px;
-        font-size: 0.9rem;
-    }
 
     /* --- Estilos Header/Nav/Hamburguesa en Móvil --- */
     header .container {
-        flex-direction: column;
-        align-items: flex-start;
-        position: relative;
-        min-height: 60px; /* O ajusta según necesites */
+        flex-direction: row; /* Asegurar que el logo y el botón estén en la misma fila */
+        justify-content: space-between; /* Logo a la izquierda, botón a la derecha */
+        align-items: center;
+        /* min-height: 60px; ya no es necesario si controlamos padding del body */
     }
 
     .menu-toggle {
-        display: block;
-        position: absolute;
-        top: 15px; /* Ajusta verticalmente */
-        right: 15px; /* Ajusta horizontalmente */
-        background: none;
-        border: none;
-        color: #fff;
-        font-size: 24px;
-        padding: 5px;
-        cursor: pointer;
+        display: block; /* Mostrar botón hamburguesa */
+        /* Quitar position absolute si el header .container es flex row y space-between */
+        /* position: absolute; */
+        /* top: 15px; */
+        /* right: 15px; */
+        color: var(--color-text-light); /* Asegurar color */
+        /* ... otros estilos del menu-toggle que ya tenías ... */
     }
 
     header nav {
-        margin-top: 10px;
+        /* El nav ahora se posiciona para el menú desplegable */
+        position: absolute;
+        top: 100%; /* Justo debajo del header */
+        left: 0;
         width: 100%;
+        background-color: var(--color-bg-secondary); /* Fondo para el menú desplegado */
+        /* margin-top: 0; ya no es necesario con position absolute */
     }
 
     header nav ul {
-        /* Estado inicial oculto del menú móvil */
-        display: none;
-        position: absolute;
-        top: 100%; /* Debajo del contenedor relativo (.container) */
-        left: 0;
+        display: none; /* Oculto por defecto */
+        flex-direction: column; /* Items en vertical */
         width: 100%;
-        background-color: var(--color-bg-secondary);
-        flex-direction: column;
         padding: 0;
         box-shadow: 0 4px 8px rgba(0,0,0,0.2);
-        z-index: 99;
         border-top: 1px solid var(--color-border);
-        box-shadow: 0 4px 8px rgba(0,0,0,0.3);
     }
 
     header nav ul.active {
-        /* Estado visible del menú móvil */
-        display: flex;
+        display: flex; /* Mostrar cuando está activo */
     }
 
     header nav ul li {
-        margin: 0;
+        margin: 0; /* Quitar margen izquierdo */
         width: 100%;
         text-align: center;
         border-bottom: 1px solid var(--color-border);
@@ -736,27 +1169,145 @@ footer {
     }
 
     header nav ul li a {
-        display: block;
+        display: block; /* Que ocupe toodo el ancho del li */
         padding: 15px;
-        color: var(--color-text-light); /* Aseguramos color */
-        font-weight: bold; /* Aseguramos font-weight */
-        text-decoration: none; /* Aseguramos sin subrayado */
+        color: var(--color-text-light);
+        font-weight: bold;
     }
 
     header nav ul li a:hover {
-             background-color: var(--color-bg-dark); /* Fondo principal oscuro para hover */
-             color: var(--color-accent); /* Texto de acento */
-         }
+        background-color: var(--color-bg-dark);
+        color: var(--color-accent);
+    }
 
-    .menu-toggle {
-              color: var(--color-text-light); /* Asegurar visibilidad */
-         }
+    /* Ajustes para About Me en móvil */
+    .about-me-content {
+        gap: 25px; /* Menos gap en móvil */
+        flex-direction: column; /* Apilar imagen y texto */
+        align-items: center; /* Centrar la imagen si es más pequeña */
+    }
+    .about-me-image-wrapper {
+        max-width: 280px; /* Imagen un poco más pequeña en móvil si es necesario */
+        margin-bottom: 20px; /* Espacio si el texto se pone debajo */
+    }
+     .about-me-text-column {
+        max-width: 100%; /* Ocupar toodo el ancho disponible */
+        text-align: center; /* Centrar el texto del resumen y el botón */
+    }
+    .about-me-summary p, .more-bio-details p {
+        text-align: left; /* Mantener el texto de los párrafos alineado a la izquierda */
+    }
+    #toggle-bio-btn {
+        margin: 0 auto 15px auto; /* Centrar el botón y ajustar margen inferior */
+    }
 
-         body {
-            /* Revisa si el padding-top necesita ajuste con el nuevo header */
-            padding-top: 70px;
-         }
 
+    /* Ajuste para el grid de skills en móvil */
+    .skills-grid {
+        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); /* Columnas un poco más anchas en tablet */
+        gap: 20px;
+    }
+
+    .skill-card {
+        padding: 20px;
+    }
+
+    .skill-icon {
+        font-size: 2.5rem;
+    }
+
+    /* Ajustes para tarjetas de proyecto en móvil */
+    .proyecto {
+        padding: 20px;
+    }
+    .project-links a { /* Botones de proyecto */
+        padding: 8px 12px; /* Ligeramente más pequeños */
+        font-size: 0.8rem;
+    }
+
+    /* Ajuste para la modal en móvil */
+    .modal-content {
+        width: 95%;
+        padding: 20px;
+    }
+    #modal-title {
+        font-size: 1.5rem;
+    }
+
+} /* Fin de @media (max-width: 768px) */
+
+
+@media (max-width: 480px) {
+    /* Ajustes más específicos para móviles pequeños */
+    body {
+        padding-top: 50px; /* Si el header es más pequeño */
+    }
+
+    header h1 { /* Logo "Agus" */
+        font-size: 1.6rem;
+    }
+     .menu-toggle {
+        font-size: 20px;
+        padding: 3px 8px;
+        top: 10px; /* Ajustar posición si es necesario */
+        right: 10px;
+    }
+
+
+    #hero {
+        min-height: 80vh;
+        padding: 80px 15px 30px;
+    }
+    #hero-name {
+        font-size: 1.8rem;
+    }
+    #hero-subtitle {
+        font-size: 1rem;
+    }
+     #profile-pic {
+        width: 120px;
+        height: 120px;
+        border-width: 3px;
+    }
+
+    .skills-grid {
+        grid-template-columns: 1fr; /* Una sola columna para skills */
+    }
+
+    .about-me-image-wrapper {
+        max-width: 200px;
+    }
+
+    .project-links a {
+        display: block; /* Botones de proyecto en bloque completo */
+        width: 100%;
+        margin-right: 0;
+        margin-bottom: 10px;
+        text-align: center;
+    }
+    .project-links a:last-child {
+        margin-bottom: 0;
+    }
+
+    #contacto form {
+        padding: 20px;
+    }
+    #contacto button[type="submit"] {
+        font-size: 1rem;
+        padding: 10px 15px;
+    }
+
+    /* Modal en móviles muy pequeños */
+    .modal-content {
+        padding: 15px;
+    }
+     #modal-title {
+        font-size: 1.3rem;
+    }
+    .modal-links a.btn {
+        font-size: 0.8rem;
+        padding: 8px 12px;
+    }
 } /* Fin de @media (max-width: 768px) */
 
 /* Podríamos añadir otro breakpoint para móviles más pequeños si es necesario */

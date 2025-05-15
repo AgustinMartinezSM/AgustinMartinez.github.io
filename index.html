@@ -3,7 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Agustin Martinez - Developer </title>  <link rel="stylesheet" href="css/style.css">
+    <title>Agustin Martinez - Developer</title>
+    <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
 </head>
@@ -11,25 +12,25 @@
 
 <header>
     <div class="container">
-    <h1>Agus</h1>
+        <h1>Agus</h1>
         <button class="menu-toggle" aria-label="Mostrar menú">
-        &#9776; </button>
+            &#9776;
+        </button>
         <nav>
-    <ul>
-        <li><a href="#hero">Inicio</a></li> <li><a href="#sobre-mi">Sobre Mí</a></li>
-        <li><a href="#habilidades">Habilidades</a></li>
-        <li><a href="#curriculum">Currículum</a></li> <li><a href="#portfolio">Portfolio</a></li> <li><a href="#contacto">Contacto</a></li>
-
-    </ul>
-</nav>
+            <ul>
+                <li><a href="#hero">Home</a></li> <li><a href="#about-me">About Me</a></li> <li><a href="#habilidades">Skills</a></li> <li><a href="#curriculum">Resume</a></li> <li><a href="#portfolio">Portfolio</a></li>
+                <li><a href="#contacto">Contact</a></li> </ul>
+        </nav>
         <button id="theme-toggle" aria-label="Cambiar tema">
-            <i class="fas fa-sun"></i></button>
+            <i class="fas fa-sun"></i>
+        </button>
     </div>
 </header>
 
 <section id="hero">
     <div class="hero-content">
-        <img src="images/miFoto.jpeg" alt="Tu Nombre" id="profile-pic"> <h1 id="hero-name">Agustin Martinez</h1> <p id="hero-subtitle">Desarrollador Full Stack | Docente en Programación  Estudiante de Programación</p> <div class="social-icons">
+        <img src="images/miFoto.jpeg" alt="Agustin Martinez" id="profile-pic"> <h1 id="hero-name">Agustin Martinez</h1>
+        <p><span id="hero-subtitle"></span></p> <div class="social-icons">
         <a href="https://www.instagram.com/agus_sm2000/?utm_source=ig_web_button_share_sheet" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
         <a href="https://github.com/AgustinMartinezSM" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>
         <a href="https://www.linkedin.com/in/AgustinSM2000" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
@@ -40,149 +41,246 @@
 </section>
 
 <main>
-    <section id="sobre-mi" class="scroll-animate">
-        <div class="container">
-        <h2>About Me</h2>
-        <p class="scroll-animate">
-            Hello! I'm Agustin Martinez, a programmer from Mar del Plata with a solid foundation in web development (including HTML, CSS, Java, Angular, MySQL, among others) and valuable experience as a teaching assistant and instructor at UTN, covering key programming subjects.
-            I am currently advancing in my Programming degree (expected graduation in 2025) and I'm eager to apply my technical skills and pedagogical approach to challenging projects that allow me to grow professionally. I'm passionate about transforming concepts into functional solutions and enjoy both individual development and teamwork.
-        </p>
-        </div>
-    </section>
 
-    <section id="habilidades" class="scroll-animate from-left">
-        <div class="container">
-        <h2>Skills</h2>
-        <p>Here are some of the technologies I work with:</p>
-        <ul>
-            <li>Java</li>
-            <li>Spring Boot</li>
-            <li>Angular</li>
-            <li>HTML5</li>
-            <li>CSS3 (Flexbox, Grid)</li>
-            <li>JavaScript / TypeScript</li>
-            <li>Python</li>
-            <li>SQL (MySQL, PostgreSQL)</li>
-            <li>Git / GitHub</li>
-        </ul>
+    <section id="habilidades" class="scroll-animate"> <div class="container">
+        <h2>My Skills</h2> <p class="skills-intro">I work with a variety of technologies to build modern and efficient web applications. Here are some of my key skills:</p> <div class="skills-grid">
+        <div class="skill-card">
+            <div class="skill-icon"><i class="fab fa-java"></i></div>
+            <h3>Java</h3>
+            <p>Object-Oriented Programming, backend development, Spring Boot basics.</p>
         </div>
-    </section>
-
-    <section id="curriculum" class="scroll-animate"> <div class="container">
-        <h2>Resume</h2>
-        <p>
-            Here you'll find a summary of my experience and education. For more details,
-            feel free to download my full CV in PDF format.
-        </p>
-        <a href="documents/miCV.pdf" class="btn" download>
-            <i class="fas fa-download"></i> Download RESUME
-        </a>
+        <div class="skill-card">
+            <div class="skill-icon"><i class="fab fa-angular"></i></div>
+            <h3>Angular</h3>
+            <p>Dynamic single-page applications, component-based architecture.</p>
+        </div>
+        <div class="skill-card">
+            <div class="skill-icon"><i class="fab fa-html5"></i></div>
+            <h3>HTML5</h3>
+            <p>Semantic markup, modern web structures.</p>
+        </div>
+        <div class="skill-card">
+            <div class="skill-icon"><i class="fab fa-css3-alt"></i></div>
+            <h3>CSS3</h3>
+            <p>Responsive design, Flexbox, Grid, animations.</p>
+        </div>
+        <div class="skill-card">
+            <div class="skill-icon"><i class="fab fa-js-square"></i></div>
+            <h3>JavaScript</h3>
+            <p>DOM manipulation, ES6+, interactive UIs, TypeScript basics.</p>
+        </div>
+        <div class="skill-card">
+            <div class="skill-icon"><i class="fab fa-python"></i></div>
+            <h3>Python</h3>
+            <p>General programming, scripting, basic data handling.</p>
+        </div>
+        <div class="skill-card">
+            <div class="skill-icon"><i class="fas fa-database"></i></div> <h3>SQL</h3>
+            <p>Database management with MySQL, PostgreSQL.</p>
+        </div>
+        <div class="skill-card">
+            <div class="skill-icon"><i class="fab fa-git-alt"></i></div>
+            <h3>Git & GitHub</h3>
+            <p>Version control, collaborative development workflows.</p>
+        </div>
+    </div>
     </div>
     </section>
 
-    <section id="portfolio" class="scroll-animate from-right"> <div class="container">
-        <h2>Portfolio</h2> <article class="proyecto scroll-animate"> <h3>Project 1: Hotel Management Application</h3>
-        <p>
-            The system helps organize a hotel by managing its rooms and guests/customers. It allows you to:
-            Make room reservations. Check in and out guests. List occupied, available, and unavailable rooms (indicating the reason).
-            Report room availability for a given period. Generate guest reports (name, ID, origin, address).
-            Optionally, we can add guest history at the hotel.
-            What's more, the project is currently being finalized.
-        </p>
-        <p><strong>Technologies:</strong> Java (OOP), Others.</p>
-        <div class="project-links">
-            <a href="#" target="_blank">View Code (In progress)</a>
-            <a href="#" target="_blank">View Demo</a>
-        </div>
-
-        <div class="project-overlay">
-            <div class="overlay-content">
-                <h4>Key Technologies</h4>
-                <div class="overlay-tech-icons">
-                    <i class="fab fa-java" title="Java"></i>
+    <section id="about-me" class="scroll-animate">
+        <div class="container">
+            <h2>About Me</h2>
+            <div class="about-me-content">
+                <div class="about-me-image-wrapper">
+                    <img src="images/MiFoto3.jpeg" alt="Agustin Martinez" id="about-me-pic">
                 </div>
-                <a href="#" class="btn-details" onclick="alert('More details about the Hotel App coming soon!'); return false;">More Details</a>
-            </div>
-        </div>
-    </article>
-
-        <article class="proyecto scroll-animate"> <h3>Project 2: My Personal Landing Page</h3> <p>
-            This is a landing page I've developed from scratch to showcase my programming skills, projects, and professional background. It's designed to be a clean, modern, and easy-to-navigate digital introduction.
-        </p>
-            <p><strong>Technologies:</strong> JavaScript, HTML, CSS.</p>
-            <div class="project-links">
-                <a href="https://github.com/AgustinMartinezSM/AgustinMartinez.github.io" target="_blank">View Code (GitHub)</a>
-            </div>
-
-            <div class="project-overlay">
-                <div class="overlay-content">
-                    <h4>Key Technologies</h4>
-                    <div class="overlay-tech-icons">
-                        <i class="fab fa-html5" title="HTML5"></i>
-                        <i class="fab fa-css3-alt" title="CSS3"></i>
-                        <i class="fab fa-js-square" title="JavaScript"></i>
-                        <i class="fab fa-git-alt" title="Git"></i>
-                        <i class="fab fa-github" title="GitHub"></i>
+                <div class="about-me-text-column">
+                    <div class="about-me-summary">
+                        <p>
+                            Hello! I'm Agustin Martinez, a programmer from Argentina with a passion for web development and teaching.
+                        </p>
+                        <button id="toggle-bio-btn" class="btn" aria-expanded="false" aria-controls="more-bio-content">
+                            Read More <i class="fas fa-chevron-down"></i>
+                        </button>
                     </div>
-                    <a href="#" class="btn-details" onclick="alert('You are currently viewing the details (this page)!'); return false;">More Details</a>
+                    <div id="more-bio-content" class="more-bio-details" style="display: none;">
+                        <p>
+                            I have a solid foundation in web development, with hands-on experience in core front-end technologies like HTML, CSS, and JavaScript, as well as proficiency in frameworks like Angular for building dynamic user interfaces. My skill set extends to back-end development with Java and PHP, and I'm adept at managing databases, particularly MySQL. Beyond technical skills, my role as a teacher at UTN has been incredibly rewarding, allowing me to develop and deliver course material for subjects such as Architecture & Operating Systems, Programming, and Mathematics, effectively bridging theory and practice.
+                        </p>
+                        <p>
+                            Currently, I'm advancing in my Programming degree at UTN Mar del Plata, with an expected graduation in 2025, where I'm further honing my expertise in areas like Object-Oriented Programming with Java, C, and advanced front-end and back-end frameworks. I am actively seeking opportunities to immerse myself in challenging projects where I can leverage my blend of technical acumen and proven teaching abilities. My goal is to contribute to innovative solutions, continuously expand my knowledge, and collaborate effectively within a team to achieve outstanding results.
+                        </p>
+                    </div>
                 </div>
             </div>
-        </article>
+        </div>
+    </section>
 
-    </div>
+    <section id="curriculum" class="scroll-animate">
+        <div class="container">
+            <h2>Resume</h2>
+            <p>
+                Here you'll find a summary of my experience and education. For more details,
+                feel free to download my full CV in PDF format.
+            </p>
+            <a href="documents/miCV.pdf" class="btn" download>
+                <i class="fas fa-download"></i> Download Resume
+            </a>
+        </div>
+    </section>
+
+    <section id="portfolio" class="scroll-animate from-right">
+        <div class="container">
+            <h2>Portfolio</h2>
+            <article class="proyecto scroll-animate">
+                <h3>Project 1: Hotel Management Application</h3>
+                <p>
+                    The system helps organize a hotel by managing its rooms and guests/customers. It allows you to:
+                    Make room reservations. Check in and out guests. List occupied, available, and unavailable rooms (indicating the reason).
+                    Report room availability for a given period. Generate guest reports (name, ID, origin, address).
+                    Optionally, we can add guest history at the hotel.
+                    What's more, the project is currently being finalized.
+                </p>
+                <p><strong>Technologies:</strong> Java (OOP), Others.</p>
+                <div class="project-links">
+                    <a href="#" target="_blank">View Code (In progress)</a>
+                    <a href="#" target="_blank">View Demo</a>
+                </div>
+                <div class="project-overlay">
+                    <div class="overlay-content">
+                        <h4>Key Technologies</h4>
+                        <div class="overlay-tech-icons">
+                            <i class="fab fa-java" title="Java"></i>
+                        </div>
+                        <a href="#" class="btn-details" data-project-id="project1">More Details</a>
+                    </div>
+                </div>
+            </article>
+
+            <article class="proyecto scroll-animate">
+                <h3>Project 2: My Personal Landing Page</h3>
+                <p>
+                    This is a landing page I've developed from scratch to showcase my programming skills, projects, and professional background. It's designed to be a clean, modern, and easy-to-navigate digital introduction.
+                </p>
+                <p><strong>Technologies:</strong> JavaScript, HTML, CSS.</p>
+                <div class="project-links">
+                    <a href="https://github.com/AgustinMartinezSM/AgustinMartinez.github.io" target="_blank">View Code (GitHub)</a>
+                </div>
+                <div class="project-overlay">
+                    <div class="overlay-content">
+                        <h4>Key Technologies</h4>
+                        <div class="overlay-tech-icons">
+                            <i class="fab fa-html5" title="HTML5"></i>
+                            <i class="fab fa-css3-alt" title="CSS3"></i>
+                            <i class="fab fa-js-square" title="JavaScript"></i>
+                            <i class="fab fa-git-alt" title="Git"></i>
+                            <i class="fab fa-github" title="GitHub"></i>
+                        </div>
+                        <a href="#" class="btn-details" data-project-id="project2">More Details</a>
+                    </div>
+                </div>
+            </article>
+        </div>
     </section>
 
     <section id="contacto" class="scroll-animate">
         <div class="container">
             <h2>Get in Touch</h2>
-            <p>
-                Interested in working together or have a question? Send me a message!
+            <p class="contact-intro">
+                I'm always open to new opportunities, collaborations, or just a friendly chat.
+                Feel free to reach out through any of these channels:
             </p>
 
-            <form name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field">
-                <p class="hidden">
-                    <label>No llenar si eres humano: <input name="bot-field"></label>
-                </p>
+            <div class="contact-options">
+                <a href="#" id="email-me-card" class="contact-option-card">
+                    <i class="fas fa-envelope"></i>
+                    <h3>Email Me</h3>
+                    <p data-email="agustinsm2000@gmail.com">agustinsm2000@gmail.com</p>
+                    <span>Click to copy my email</span>
+                    <div class="copy-notification" style="display: none; margin-top: 10px; font-weight: bold;"></div>
+                </a>
 
+                <a href="https://www.linkedin.com/in/AgustinSM2000" target="_blank" class="contact-option-card">
+                    <i class="fab fa-linkedin-in"></i>
+                    <h3>LinkedIn</h3>
+                    <p>AgustinSM2000</p>
+                    <span>Connect professionally</span>
+                </a>
+
+                <a href="https://github.com/AgustinMartinezSM" target="_blank" class="contact-option-card">
+                    <i class="fab fa-github"></i>
+                    <h3>GitHub</h3>
+                    <p>AgustinMartinezSM</p>
+                    <span>View my work</span>
+                </a>
+
+            </div>
+
+            <div class="form-toggle-area" style="text-align: center; margin-top: 40px;">
+                <p>Or, if you prefer, you can send me a message using the form below:</p>
+                <button id="show-contact-form-btn" class="btn">Show Contact Form</button>
+            </div>
+
+            <form name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field" id="contact-form" class="hidden-form"> <p class="hidden">
+                <label>Don't fill this out if you're human: <input name="bot-field"></label>
+            </p>
                 <div class="form-group">
                     <label for="name">Name:</label>
                     <input type="text" id="name" name="name" required>
-                    <span class="error-message" id="name-error"></span> </div>
-
+                    <span class="error-message" id="name-error"></span>
+                </div>
                 <div class="form-group">
                     <label for="email">Email:</label>
                     <input type="email" id="email" name="email" required>
-                    <span class="error-message" id="email-error"></span> </div>
-
+                    <span class="error-message" id="email-error"></span>
+                </div>
                 <div class="form-group">
                     <label for="message">Message:</label>
                     <textarea id="message" name="message" rows="5" required></textarea>
-                    <span class="error-message" id="message-error"></span> </div>
-
+                    <span class="error-message" id="message-error"></span>
+                </div>
                 <button type="submit" class="btn">
                     <i class="fas fa-paper-plane"></i> Send Message
                 </button>
             </form>
-            <div class="social-icons contact-social-icons">
+            <div class="social-icons contact-social-icons" style="margin-top: 50px;">
                 <a href="https://www.instagram.com/agus_sm2000/?utm_source=ig_web_button_share_sheet" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-                <a href="https://github.com/AgustinMartinezSM" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>
-                <a href="https://www.linkedin.com/in/AgustinSM2000" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
                 <a href="https://web.facebook.com/profile.php?id=100091052193758" target="_blank" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
-                <a href="mailto:agustinsm2000@gmail.com" aria-label="Enviar correo"><i class="fas fa-envelope"></i></a>
             </div>
-
         </div>
     </section>
+
 </main>
 
 <footer>
     <div class="container">
-    <p>&copy; 2025 Agustin Alejandro Martinez. All rights reserved.</p>
+        <p>&copy; 2025 Agustin Alejandro Martinez. All rights reserved.</p>
     </div>
 </footer>
 
-    <a href="#" id="back-to-top-btn" title="Volver arriba">
-    <i class="fas fa-arrow-up"></i> </a>
+<a href="#" id="back-to-top-btn" title="Volver arriba">
+    <i class="fas fa-arrow-up"></i>
+</a>
+
+<div id="project-modal" class="modal-overlay" aria-hidden="true">
+    <div class="modal-content" role="dialog" aria-labelledby="modal-title" aria-describedby="modal-description">
+        <button class="modal-close-btn" aria-label="Cerrar ventana modal">&times;</button>
+        <h3 id="modal-title">Project Name Here</h3>
+        <div id="modal-image-container">
+        </div>
+        <div id="modal-description">
+            <p>Detailed project description here...</p>
+        </div>
+        <h4>Technologies Used:</h4>
+        <ul id="modal-tech-list">
+        </ul>
+        <div class="modal-links">
+            <a id="modal-github-link" href="#" target="_blank" class="btn">View Code (GitHub)</a>
+            <a id="modal-demo-link" href="#" target="_blank" class="btn">View Demo</a>
+        </div>
+    </div>
+</div>
+
 <script src="js/script.js"></script>
 </body>
 </html>
