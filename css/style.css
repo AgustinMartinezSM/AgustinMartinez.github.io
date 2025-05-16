@@ -5,6 +5,7 @@
 /* Definición de la Paleta de Colores con Variables CSS */
 :root {
     --color-bg-dark: #111827;
+    --color-bg-dark-rgb: 17, 24, 39;
     --color-bg-secondary: #1f2937;
     --color-text-light: #e5e7eb;
     --color-text-secondary: #9ca3af;
@@ -13,6 +14,14 @@
     --color-border: #374151;
     /* NUEVA VARIABLE para el overlay de proyectos */
     --color-accent-rgb: 34, 211, 238; /* RGB de tu cian #22d3ee */
+
+    /* NUEVAS VARIABLES PARA EL OVERLAY DEL HERO */
+        --hero-overlay-start-color-rgb: var(--color-bg-dark-rgb); /* Por defecto, usa el color oscuro */
+        --hero-overlay-end-color-rgb: var(--color-bg-dark-rgb);
+        --hero-overlay-start-opacity: 0.85;
+        --hero-overlay-end-opacity: 0.95;
+        --hero-text-color: var(--color-text-light); /* Color del texto en el hero */
+        --hero-content-bg: rgba(31, 41, 55, 0.7); /* Fondo del .hero-content */
 
     --fuente-titulos: 'Unbounded', sans-serif;
     --fuente-cuerpo: 'Roboto', sans-serif;
@@ -29,6 +38,16 @@ body.light-mode {
     --color-border: #e0e0e0;
     /* NUEVA VARIABLE para el overlay de proyectos en modo claro */
     --color-accent-rgb: 0, 123, 255; /* RGB de tu azul #007bff */
+    --color-bg-light-rgb: 244, 247, 249; /* RGB de tu --color-bg-dark en modo claro (casi blanco) */
+        --color-accent-light-rgb: 0, 123, 255; /* RGB de tu --color-accent en modo claro */
+
+/* REDEFINIMOS VARIABLES PARA EL OVERLAY DEL HERO EN MODO CLARO */
+    --hero-overlay-start-color-rgb: var(--color-bg-light-rgb); /* Usar un color claro para el overlay */
+    --hero-overlay-end-color-rgb: var(--color-bg-light-rgb);
+    --hero-overlay-start-opacity: 0.6;  /* Opacidad más baja para que la imagen se vea más */
+    --hero-overlay-end-opacity: 0.8;
+    --hero-text-color: var(--color-text-light); /* El texto en modo claro (que es oscuro) sobre un overlay claro */
+    --hero-content-bg: rgba(255, 255, 255, 0.8); /* Fondo del .hero-content en modo claro */
 }
 
 /* Estilos Globales y Reseteo Básico */
@@ -164,8 +183,12 @@ header nav ul li a:hover {
     /* Fondo con imagen y overlay oscuro */
     /* ¡¡IMPORTANTE!! Reemplaza 'tu-imagen-de-fondo.jpg' con el nombre de una imagen real que pongas en tu carpeta /images */
     /* Si no tienes imagen ahora, puedes descomentar la línea de background: var(--color-bg-dark) para ver el layout */
-         background: linear-gradient(rgba(17, 24, 39, 0.8), rgba(17, 24, 39, 0.8)), url('../images/hero-background.jpg') no-repeat center center/cover;
-    /* background: var(--color-bg-dark); */ /* <-- Descomenta esta si NO tienes imagen de fondo aún */
+background:
+        linear-gradient(
+            rgba(var(--hero-overlay-start-color-rgb), var(--hero-overlay-start-opacity)),
+            rgba(var(--hero-overlay-end-color-rgb), var(--hero-overlay-end-opacity))
+        ),
+        url('../images/hero-background.jpg') no-repeat center center/cover;    /* background: var(--color-bg-dark); */ /* <-- Descomenta esta si NO tienes imagen de fondo aún */
 
     height: 90vh; /* Altura casi completa de la ventana */
     display: flex;
@@ -173,16 +196,30 @@ header nav ul li a:hover {
     justify-content: center; /* Centra horizontalmente el contenido */
     text-align: center; /* Centra el texto dentro del .hero-content */
     padding-top: 70px; /* Compensar por el header fijo (ajusta si es necesario) */
-    color: var(--color-text-light); /* Texto claro por defecto aquí */
+    color: var(--color-text-color); /* Texto claro por defecto aquí */
     position: relative; /* Para contextos de posicionamiento si fueran necesarios */
 }
 
 .hero-content {
-    background-color: rgba(31, 41, 55, 0.8); /* Usamos el color secundario con transparencia para efecto "flotante" (--color-bg-secondary con alfa) */
-    padding: 40px;
-    border-radius: 15px; /* Bordes redondeados */
-    max-width: 550px; /* Ancho máximo del cuadro central */
-    box-shadow: 0 8px 20px rgba(0,0,0,0.4); /* Sombra más pronunciada */
+    background-color: var(--hero-content-bg); /* Usar variable para el fondo */
+        padding: 30px 40px;
+        border-radius: 15px;
+        max-width: 600px;
+        box-shadow: 0 8px 25px rgba(0,0,0,0.5);
+}
+
+/* Asegúrate que los textos específicos dentro de .hero-content también usen la variable de color o contrasten bien */
+#hero-name {
+    /* ... tus estilos ... */
+    color: var(--hero-text-color); /* O un color específico que contraste con hero-content-bg */
+}
+
+#hero-subtitle {
+    /* ... tus estilos ... */
+    /* El color (--color-text-secondary) podría necesitar ajustarse o usar una variable específica para el hero */
+    /* Por ahora, si --hero-text-color es tu texto principal, y --color-text-secondary
+       es el secundario, puede que necesites una variable --hero-text-secondary-color también */
+    color: var(--color-text-secondary); /* Revisa si este color contrasta bien en ambos modos con el nuevo overlay */
 }
 
 #profile-pic {
